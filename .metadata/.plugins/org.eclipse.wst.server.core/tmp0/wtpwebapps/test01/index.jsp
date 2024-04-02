@@ -14,14 +14,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	
+    
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메뉴 연습</title>
+   
     <style>
     * { margin: 0; padding: 0; }
     ul { list-style: none; }
     a { text-decoration: none; color:#333; }
-    #gnb { width:1400px; margin: 20px auto; }
+    #gnb { width:1600px; margin: 20px auto; }
     #gnb > ul > li { float:left; width: 200px; }
     #gnb > ul > li > a { font-size:20px; font-weight: bold; 
     display:block; text-align: center; line-height: 42px; border-bottom:3px solid #333; }
@@ -29,7 +33,12 @@
     #gnb > ul > li:hover > ul { display:block; }
     #gnb ul li a { display:block; text-align: center; line-height: 32px; }
     #gnb > ul > li:hover > a { color:deepskyblue;  border-bottom:3px solid deepskyblue; }
+    #right > nav { float: right;}
     </style>
+    
+    <nav id="right">
+    	<a href="login.jsp" >로그인</a>
+    </nav>
 </head>
 <body>
 	<ul>
@@ -87,6 +96,14 @@
                     <li><a href="Education_cu.jsp">청을전통 문화원</a></li>
                     <li><a href="Education_pan.jsp">판소리/민요/풍물 배우기</a></li>
                     <li><a href="Education_dan.jsp">전통춤 배우기</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">커뮤니티</a>
+                <ul>
+                    <li><a href="Commu_guide.jsp">안내사항</a></li>
+                    <li><a href="Commu_notice.jsp">공지사항</a></li>
+                    <li><a href="Commu_qna.jsp">묻고답하기</a></li>
                 </ul>
             </li>
             <li>

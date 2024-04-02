@@ -1,0 +1,5 @@
+package org.pungnam.dto;
+
+public class Qna {
+
+}
