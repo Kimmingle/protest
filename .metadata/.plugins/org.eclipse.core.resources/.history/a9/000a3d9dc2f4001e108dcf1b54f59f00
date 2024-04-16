@@ -1,0 +1,30 @@
+package org.pung.ctrl;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/pro01")
+public class Main extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    
+    public Main() {
+        super();
+    }
+    
+    
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	String testname = "김민아";
+    	
+    	//일단 나는 index.jsp에 공지사항 뜨게 할거니까 글로 보냄
+    	//지금은 넘길 데이터가 없어서 forward 안해도 되지만 혹시나 모르니 일단 함
+    	
+    	RequestDispatcher view = request.getRequestDispatcher("index.jsp");
+    }
+}

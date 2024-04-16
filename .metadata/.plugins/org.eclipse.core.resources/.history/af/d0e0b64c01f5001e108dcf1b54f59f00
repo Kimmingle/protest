@@ -1,0 +1,38 @@
+package org.pung.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.pung.dto.Notice;
+
+public class NoticeDAO {
+	
+	Connection con = null;   
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	
+	public List<Notice> getNoticeList(){  //List 전해줄 수 있는 메서드 만들거임
+		
+		List<Notice> notiList = new ArrayList<>();  //공지사항 목록 담을 리스트 선언
+		
+		MySQLDB mysql = new MySQLDB();  //MySQLDB로 객체 새로 만들기
+		
+		try {
+			con = mysql.Connect();  //mysql 에 연결하고
+			pstmt = con.prepareStatement(SqlLang.SELECT_ALL_NOTICE);  //sql문 넣어줌
+			rs = pstmt.executeQuery();	//sql문 실행
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			mysql.close(con, pstmt, rs);
+		}
+		
+		return notiList;  //( Q. List로 메소드 만들었으니까 리스트로 리턴해줘야하는건가? )
+	}
+	
+}

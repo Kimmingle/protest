@@ -5,17 +5,34 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+
+
 <%
 	request.setCharacterEncoding("utf-8");
 	response.setCharacterEncoding("utf-8");
 	response.setContentType("text/html; charset=utf-8");
 	
+
+	String path1 = request.getContextPath();   //현재 프로젝트 명
+	out.write(path1+"<br>");
+	
+	String path2 = application.getContextPath();   //현재 프로젝트 명
+	out.write(path2+"<br>");
+	
+	String path3 = application.getRealPath("/");   //현재 프로젝트까지의 모든 경로
+	out.write(path3);
+
+	String realPath = request.getSession().getServletContext().getRealPath("/");
+	out.write(realPath);
+	
+	
 %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	
-    
+   
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
